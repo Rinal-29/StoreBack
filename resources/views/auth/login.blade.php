@@ -1,7 +1,42 @@
-@extends('layouts.app')
+@extends('layouts.auth')
+
+@section('title')
+Login Store
+@endsection
 
 @section('content')
-<div class="container">
+<div class="page-content page-auth">
+    <div class="section-store-auth" data-aos="fade-up">
+        <div class="container">
+            <div class="row align-items-center row-login">
+                <div class="col-lg-6 text-center">
+                    <img src="/images/login-placeholder.png" alt="image login" class="w-50 mb-4 mb-lg-none">
+                </div>
+                <div class="col-lg-5 justify-content-center">
+                    <h2>Belanja kebutuhan utama, <br>lebih mudah</h2>
+                    <form action="" class="mt-3">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email" id="email" class="form-control w-75">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="form-control w-75">
+                        </div>
+                        <a href="{{ route('dashboard') }}" class="btn btn-success btn-block w-75 mt-4">
+                            Sign In to My Account
+                        </a>
+                        <a href="/register.html" class="btn btn-signup btn-block w-75 mt-4">
+                            Sign Up
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="display: none;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -18,9 +53,9 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -32,9 +67,9 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -58,9 +93,9 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
                                 @endif
                             </div>
                         </div>
