@@ -26,7 +26,7 @@ Login Store
                         <a href="{{ route('dashboard') }}" class="btn btn-success btn-block w-75 mt-4">
                             Sign In to My Account
                         </a>
-                        <a href="/register.html" class="btn btn-signup btn-block w-75 mt-4">
+                        <a href="{{ route('register') }}" .html" class="btn btn-signup btn-block w-75 mt-4">
                             Sign Up
                         </a>
                     </form>

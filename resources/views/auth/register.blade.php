@@ -159,7 +159,7 @@ Register Store
             email: "test@gmail.com",
             password: "",
             is_store_open: true,
-            storeName: "",
+            storeName: "test",
         }
     });
 </script>
